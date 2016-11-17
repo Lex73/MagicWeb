@@ -16,6 +16,15 @@ class Documentos_model extends CI_Model
 		return $query->result();
 	}
 
+	public function getall_docs()
+	{
+		$this->db->select('*');
+		$this->db->from('documentos');
+
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	public function get_cod_documento($data)
 	{
 		$this->db->select('*');
@@ -88,6 +97,21 @@ class Documentos_model extends CI_Model
 	public function update_documento($data)
 	{
 		$this->db->update('documentos', $data, "CodigoProtocolo ='".$data['CodigoProtocolo']."'");
+	}
+
+	function numero_documentos()
+	{
+		$this->db->select('*');
+		$this->db->from('documentos');
+		$query = $this->db->get();
+		$docs = 0;
+
+		foreach ($query->result() as $row)
+		{
+			$docs++;
+		}
+
+		return $docs;
 	}
 
 }

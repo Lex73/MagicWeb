@@ -91,5 +91,20 @@ class Usuarios_model extends CI_Model
 		$this->db->query($str);
 		$this->db->trans_complete();
 	}
+
+	function numero_usuarios()
+	{
+		$this->db->select('*');
+		$this->db->from('usuarios');
+		$query = $this->db->get();
+		$users = 0;
+
+		foreach ($query->result() as $row)
+		{
+			$users++;
+		}
+
+		return $users;
+	}
 }
 ?>

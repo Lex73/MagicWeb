@@ -79,5 +79,20 @@ class Proyectos_model extends CI_Model
  			return $row->Max_ID;
 		}
 	}
+
+	function numero_proyectos()
+	{
+		$this->db->select('*');
+		$this->db->from('proyectos');
+		$query = $this->db->get();
+		$proy = 0;
+
+		foreach ($query->result() as $row)
+		{
+ 			$proy++;
+		}
+
+		return $proy;
+	}
 }
 ?>

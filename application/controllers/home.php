@@ -6,6 +6,9 @@ class Home extends CI_Controller
 	public function __construct()
 	{
 		parent:: __construct();
+		$this->load->model('proyectos_model');
+		$this->load->model('documentos_model');
+		$this->load->model('usuarios_model');
 		$this->very_sesion();
 	}
 
@@ -26,11 +29,15 @@ class Home extends CI_Controller
 		{
 				$data['titulo']= 'Home';
 				$data['cambia']= 0;
+				$data['proyectos']= $this->proyectos_model->numero_proyectos();
+				$data['documentos']= $this->documentos_model->numero_documentos();
+				$data['usuarios']= $this->usuarios_model->numero_usuarios();
+				$data['proximo']= $this->documentos_model->get_CodigoProt();
 				$this->load->view('Plantilla/Header',$data);
 				$this->load->view('Home/Index');
 		}
 
-		$this->load->view('Plantilla/Footer');
+	$this->load->view('Plantilla/Footer');
 	}
 
 	function very_sesion()

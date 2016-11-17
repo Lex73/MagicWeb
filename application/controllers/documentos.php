@@ -39,6 +39,24 @@ class Documentos extends CI_Controller
 
 	}
 
+	public function verDocumentos()
+	{
+		$data['titulo'] = 'Documentos';
+
+		$data['query'] = $this->documentos_model->getall_docs();
+		$data['usuario'] = $this->session->userdata('usuario');
+		$data['nombre'] = $this->session->userdata('nombre');
+		$data['perfil'] = $this->session->userdata('perfil');
+		$data['mensaje'] = $this->mensaje;
+		$data['etapas'] = $this->etapas_model->getall_etapas();
+		$data['sistemas'] = $this->sistemas_model->getall_sistemas();
+		$data['estados'] = $this->estados_model->getall_estados();
+
+		$this->load->view('Plantilla/Header',$data);
+		$this->load->view('Documentos/Documentos');
+		$this->load->view('Plantilla/Footer');
+	}
+
 	public function agregar($idProyecto,$idItem)
 	{
 		$data['titulo'] = 'ABM Documentos';
