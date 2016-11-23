@@ -17,6 +17,8 @@ class Home extends CI_Controller
 		$data['usuario'] = $this->session->userdata('usuario');
 		$data['nombre'] = $this->session->userdata('nombre');
 		$data['perfil'] = $this->session->userdata('perfil');
+		$data['db'] = $this->session->userdata('db');
+		$data['dbdriver'] = $this->session->userdata('dbdriver');
 
 		if ($this->session->userdata('cambia') == 1)
 		{
@@ -37,7 +39,7 @@ class Home extends CI_Controller
 				$this->load->view('Home/Index');
 		}
 
-	$this->load->view('Plantilla/Footer');
+	$this->load->view('Plantilla/Footer',$data);
 	}
 
 	function very_sesion()

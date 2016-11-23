@@ -45,10 +45,12 @@ class Login extends CI_Controller {
 
 			foreach ($resultado as $row)
 			{
-				$datos = array('usuario'=> $row->IDUsuario,
+				$datos = array('usuario'=>$row->IDUsuario,
 							   			 'nombre'=> $row->NombreUsuario,
 							   	 		 'perfil'=> $row->IDProfile,
-										 	 'cambia'=> $row->Cambia);
+										 	 'cambia'=> $row->Cambia,
+										 	 'db'=> $db->default->database,
+										   'dbdriver'=> $db->default->dbdriver);
 
 				$this->session->set_userdata($datos);
 				redirect(base_url().'home/');

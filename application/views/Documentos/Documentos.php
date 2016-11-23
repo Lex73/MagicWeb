@@ -23,8 +23,8 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Código Protocolo</th>
-                        <th>Nombre de Protocolo</th>
+                        <th width="180">Código Protocolo</th>
+                        <th width="400">Nombre de Protocolo</th>
                         <th>Etapa</th>
                         <th>Sistema</th>
                         <th>Cod. Cliente</th>
@@ -37,12 +37,12 @@
                     foreach ($query as $row)
                     {
                       echo '<tr>';
-                      echo '<td data-replace-tmp-key="b82a9a13f4651e9abcbde90cd24ce2cb"><os-p key="b82a9a13f4651e9abcbde90cd24ce2cb">'.$row->CodigoProtocolo.'</os-p></td>';
-                      echo '<td data-replace-tmp-key="846ebd7315632b4efd778655c824ebd8"><os-p key="846ebd7315632b4efd778655c824ebd8">'.$row->NombreProtocolo.'</os-p></td>';
-                      echo '<td data-replace-tmp-key="846ebd7315632b4efd778655c824ebd8"><os-p key="846ebd7315632b4efd778655c824ebd8">'.$row->IDEtapa.'</os-p></td>';
-                      echo '<td data-replace-tmp-key="846ebd7315632b4efd778655c824ebd8"><os-p key="846ebd7315632b4efd778655c824ebd8">'.$row->IDSistema.'</os-p></td>';
-                      echo '<td data-replace-tmp-key="846ebd7315632b4efd778655c824ebd8"><os-p key="846ebd7315632b4efd778655c824ebd8">'.$row->CodigoCliente.'</os-p></td>';
-                      echo '<td data-replace-tmp-key="846ebd7315632b4efd778655c824ebd8"><os-p key="846ebd7315632b4efd778655c824ebd8">'.$row->IDEstado.'</os-p></td>';
+                      echo '<td width="180">'.$row->CodigoProtocolo.'</os-p></td>';
+                      echo '<td width="400">'.$row->NombreProtocolo.'</os-p></td>';
+                      echo '<td>'.$row->IDEtapa.'</os-p></td>';
+                      echo '<td>'.$row->IDSistema.'</os-p></td>';
+                      echo '<td>'.$row->CodigoCliente.'</os-p></td>';
+                      echo '<td>'.$row->IDEstado.'</os-p></td>';
                       $fecha = $row->FechaEntrega;
                       if($fecha == '0000-00-00')
                       {

@@ -5,17 +5,16 @@
 					<footer class="footer">
 				       <p>&copy; LexStanley 2015</p>
 				       <?php 	echo base_url();
-				       			/*echo $db['default']['hostname'];
-				       			echo $db['default']['database'];
-								echo $db['default']['dbdriver'];*/
+				       				//echo 'Base de datos: '.$db;
+				       				//echo 'Driver de la BD: '.$dbdriver;
 				       ?>
 				    </footer>
 
 					<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 					<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.js"></script>
 					<script src="<?php echo base_url(); ?>assets/js/fileinput.min.js"></script>
-				    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-				    <script src="<?php echo base_url(); ?>assets/js/twitter-bootstrap-hover-dropdown.min.js"></script>
+				  <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+				  <script src="<?php echo base_url(); ?>assets/js/twitter-bootstrap-hover-dropdown.min.js"></script>
 					<script src="<?php echo base_url(); ?>assets/js/metisMenu.min.js"></script>
 					<!-- <script src="<?php //echo base_url(); ?>assets/js/morris.min.js"></script>
 					<script src="<?php //echo base_url(); ?>assets/js/morris-data.js"></script> -->
