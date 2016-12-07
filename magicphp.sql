@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2016 a las 17:49:45
+-- Tiempo de generación: 07-12-2016 a las 14:40:05
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `clientes` (
   `IDCliente` int(11) NOT NULL,
   `NombreCliente` varchar(50) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `clientes`
@@ -44,7 +44,8 @@ INSERT INTO `clientes` (`IDCliente`, `NombreCliente`) VALUES
 (8, 'Hemo Derivados'),
 (9, 'Synthon'),
 (10, 'pharmADN'),
-(11, 'Casasco');
+(11, 'Casasco'),
+(12, 'Richmond');
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,10 @@ INSERT INTO `documentos` (`CodigoProtocolo`, `NombreProtocolo`, `IDEtapa`, `IDCl
 ('016BA035-00.PIQ', 'Protocolo de calificación de instalación ensobradora', 'IQ', 11, 'EQP', 8, 'IQ-135/01', '0000-00-00', 'RED', 13, 'N'),
 ('016BA036-00.POQ', 'Protocolo de calificación de operación ensobradora', 'OQ', 11, 'EQP', 8, 'OQ-135/01', '0000-00-00', 'NOINI', 13, 'N'),
 ('016BA037-00.PIQ', 'Protocolo de calificación de instalación linea de estuchado', 'IQ', 11, 'EQP', 8, 'IQ-169/01', '0000-00-00', 'RED', 13, 'N'),
-('016BA038-00.POQ', 'Protocolo de calificación de operación linea de estuchado', 'OQ', 11, 'EQP', 8, 'OQ-169/01', '0000-00-00', 'NOINI', 13, 'N');
+('016BA038-00.POQ', 'Protocolo de calificación de operación linea de estuchado', 'OQ', 11, 'EQP', 8, 'OQ-169/01', '0000-00-00', 'NOINI', 13, 'N'),
+('016BA039-00.PIQ', 'Protocolo de Calificación de instalación  BIN 500 Litros', 'IQ', 4, 'EQP', 4, '', '0000-00-00', 'NOINI', 7, 'N'),
+('016BA040-00.PIQ', 'Protocolo de calificación de Instalación BIN 1300 Litros', 'IQ', 4, 'EQP', 4, '', '0000-00-00', 'NOINI', 7, 'N'),
+('016BA041-00.ARE', 'Acta de revisión de proyecto oncológicos', 'ARE', 12, 'INF', 9, '', '0000-00-00', 'INI', 14, 'N');
 
 -- --------------------------------------------------------
 
@@ -204,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `itemproyecto` (
   `IDProyecto` int(11) NOT NULL,
   `NombreItem` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   `Observaciones` text COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `itemproyecto`
@@ -223,7 +227,8 @@ INSERT INTO `itemproyecto` (`IDItemProyecto`, `IDProyecto`, `NombreItem`, `Obser
 (10, 4, 'ATB-PW', 'Equipos de producción de PW para antibióticos.'),
 (11, 7, 'Verificación de funcionamiento', 'Verificar la instalación y la operación del subloop '),
 (12, 4, 'Validación de Procesos 2016', 'Productos:\r\n- Pervinox Clorhexidina\r\n- Dacten D\r\n- Mosar'),
-(13, 8, 'Equipos', '');
+(13, 8, 'Equipos', ''),
+(14, 9, 'Revisión de proyecto', '');
 
 -- --------------------------------------------------------
 
@@ -241,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `numero` (
 --
 
 INSERT INTO `numero` (`siguiente`, `year`) VALUES
-(39, 2016);
+(42, 2016);
 
 -- --------------------------------------------------------
 
@@ -322,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `proyectos` (
   `IDProyecto` int(11) NOT NULL,
   `NombreProyecto` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   `IDCliente` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `proyectos`
@@ -336,7 +341,8 @@ INSERT INTO `proyectos` (`IDProyecto`, `NombreProyecto`, `IDCliente`) VALUES
 (5, 'Proyecto Planta Pilar Etapa III, IV y V', 11),
 (6, 'Planta de PW. Upgrade.', 7),
 (7, 'Sub loop WFI', 7),
-(8, 'Equipos 2016', 11);
+(8, 'Equipos 2016', 11),
+(9, 'Richmond - Planta Oncológicos', 12);
 
 -- --------------------------------------------------------
 
@@ -395,7 +401,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 INSERT INTO `usuarios` (`IDUsuario`, `NombreUsuario`, `ClaveUsuario`, `IDProfile`, `Cambia`) VALUES
 ('alopez', 'Alejandro Lopez Stanley', '1b826e934a46273b25974b6c309b421a', 'ADM', 0),
 ('cmontano', 'Candela Montaño', 'c33367701511b4f6020ec61ded352059', 'USU', 1),
-('jpbenedetti', 'Juan Pablo Benedetti', 'e10adc3949ba59abbe56e057f20f883e', 'USU', 0),
+('jpbenedetti', 'Juan Pablo Benedetti', '24459da982f149a626f8f2fc30e96aee', 'ADM', 0),
 ('merolando', 'Maria Eugenia Rolando', 'b83bd0941071c45518d5b451059ebd95', 'ADM', 0),
 ('prolando', 'Pablo Rolando', 'c33367701511b4f6020ec61ded352059', 'USU', 1),
 ('vbalcedo', 'Veronica Balcedo', '65f20d37e89213b9af16e195eab20baf', 'USU', 0);
@@ -478,17 +484,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `IDCliente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `IDCliente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `itemproyecto`
 --
 ALTER TABLE `itemproyecto`
-  MODIFY `IDItemProyecto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `IDItemProyecto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `IDProyecto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `IDProyecto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -16,9 +16,9 @@
 | environments.
 |
 */
-//$config['base_url'] = 'http://192.168.40.1/MagicWeb';
+$config['base_url'] = 'http://192.168.16.167/MagicWeb';
 //$config['base_url'] = 'http://10.0.0.19/MagicWeb';
-$config['base_url'] = 'http://localhost/MagicWeb';
+//$config['base_url'] = 'http://localhost/MagicWeb';
 
 /*
 |--------------------------------------------------------------------------
