@@ -30,7 +30,7 @@ class Usuarios extends CI_Controller {
 		$permiso = $this->permisos_model->get_permiso($data);
 
 		if($permiso == true)
-    {
+    	{
 	      $data['accion'] = 'ADD';
 				$data['agregar'] = $this->permisos_model->get_permiso($data);
 				$data['accion'] = 'MOD';
@@ -59,7 +59,7 @@ class Usuarios extends CI_Controller {
 		$permiso = $this->permisos_model->get_permiso($data);
 
 		if($permiso == true)
-    {
+    	{
 			if ($this->session->userdata('cambia') == 1)
 			{
 					$this->load->view('Usuarios/CambiaClave');
@@ -112,8 +112,8 @@ class Usuarios extends CI_Controller {
 	{
         $mi_archivo = $this->input->post('Imagen');
         $config['upload_path'] = "C:/xampp/htdocs/MagicWeb/assets/Imagenes/Usuarios/";
-        $config['file_name'] =  $this->input->post('IDUsuario',TRUE).".gif";
-        $config['allowed_types'] = "gif";
+        $config['file_name'] =  $this->input->post('IDUsuario',TRUE).".jpg";
+        $config['allowed_types'] = "jpg";
         $config['max_size'] = "50000";
         $config['max_width'] = "2000";
         $config['max_height'] = "2000";
@@ -128,7 +128,7 @@ class Usuarios extends CI_Controller {
         }
         else
         {
-        	echo 'OK';
+        	return;
         }
 
     }
@@ -274,7 +274,7 @@ class Usuarios extends CI_Controller {
 	}
 
 	function username_check($id)
-  {
+  	{
     	$val = $this->usuarios_model->verif_usuario($id);
 
     	if($val == true)
